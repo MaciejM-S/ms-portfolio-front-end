@@ -8,9 +8,11 @@ import styles from "./styles.module.css";
 function AnimatedText({
   text,
   className = "",
+  centerClass
 }: {
   text: string;
   className?: string;
+  centerClass?:any
 }) {
   const [showText, setShowText] = useState(false);
 
@@ -31,7 +33,7 @@ function AnimatedText({
       from: { opacity: 0, y: 40, height: 0 },
     });
     return (
-      <div style={{display:'flex'}} >
+      <div style={centerClass||{display:'flex'}} >
         {trail.map(({ height, ...style }, index) => (
           <a.div key={index} className={styles.trailsText} style={{...style, width:'auto'}}>
             <a.div style={{ height }}>{items[index]}</a.div>
@@ -45,7 +47,7 @@ function AnimatedText({
     <>
       <div className="w-full mx-auto py-2 flex items-center justify-center text-center">
         <div
-          className={`w-full text-dark font-bold flex`}
+          className={`flex w-full text-dark font-bold `}
         >
           <Trail open={showText}>
             {text.split(" ").map((word: string, index: number) => (

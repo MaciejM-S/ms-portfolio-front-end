@@ -12,17 +12,17 @@ function NavBar() {
 
   return (
     <>
-      <header className="w-full px-32  py-8 font-medium  flex items-center  justify-between">
-        <nav>
-          <Link to="/" className="group mr-4  relative">
+      <header className="w-full px-36 py-8 font-medium  flex items-center  justify-between">
+        <nav >
+          <Link to="/" className="group mr-4  relative font-semibold">
             Home
             <span className={`${spanClassName} ${location.pathname==='/'?'w-full':'w-0'}`}>&nbsp;</span>
           </Link>
-          <Link to="/about" className="group mx-4 relative">
+          <Link to="/about" className="group mx-4 relative font-semibold">
             About
             <span className={`${spanClassName} ${location.pathname==='/about'?'w-full':'w-0'}`}>&nbsp;</span>
           </Link>
-          <Link to="/projects" className="group ml-4 relative">
+          <Link to="/projects" className="group ml-4 relative font-semibold">
             Projects
             <span className={`${spanClassName} ${location.pathname==='/projects'?'w-full':'w-0'}`}>&nbsp;</span>
           </Link>
