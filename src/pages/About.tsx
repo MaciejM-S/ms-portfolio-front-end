@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import AnimatedText from "../components/AnimatedText";
 import Layout from "../components/Layout";
-import profilePicture from "../pub/profile-picture.jpg";
+import profilePicture from "../pub/profile.png";
 import Skills from "../components/Skills";
 import { useInView, animated } from "@react-spring/web";
 import { useEffect } from "react";
@@ -29,7 +29,7 @@ function About() {
           </div>
           <div className="flex relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8">
             <div className=" absolute top-0 left-2 -z-10 w-[101%] h-[102%]  rounded-[2rem] bg-dark" />
-            <div className="w-2/3 shadow-2xl rounded-2xl ">
+            <div className="w-2/3 shadow-2xl rounded-2xl bg-light">
               <img
                 src={profilePicture}
                 alt="Web Developer"
