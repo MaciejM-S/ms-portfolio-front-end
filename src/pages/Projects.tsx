@@ -12,6 +12,7 @@ import TechStack from "../components/TechStack";
 import { useEffect } from "react";
 import React from "react";
 import PageTransition from "../components/PageTransition";
+import LoadingAnimation from "../components/LoadingAnimation";
 
 const Project = ({
   type,
@@ -110,6 +111,14 @@ function Projects() {
   const handleResize = () => {
     setWidth(window.innerWidth);
   };
+
+  const [pageLoaded, setPageLoaded] = React.useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setPageLoaded(true);
+    }, 1200);
+  }, []);
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
@@ -117,6 +126,7 @@ function Projects() {
     };
   }, [width]);
 
+  
   return (
     <>
       <Helmet>
@@ -124,8 +134,13 @@ function Projects() {
         <meta name="description" content="recent projects" />
         <link rel="canonical" href="/projects" />
       </Helmet>
+      {!pageLoaded && <LoadingAnimation />}
       <PageTransition>
-        <main className="w-full mb-16 flex flex-col items-center justify-center">
+        <main className="w-full mb-16 flex flex-col items-center justify-center" style={
+            pageLoaded
+              ? { height: "auto" }
+              : { overflow: "hidden", height: "100vh" }
+          } >
           <Layout className="xs:!p-1">
             <div className="mb-24 xs:mb-0">
               <AnimatedText
@@ -236,7 +251,6 @@ function Projects() {
                     login: "dummyuser@wp.pl",
                     password: "smith1234",
                   }}
-
                 />
               </div>
             </div>
