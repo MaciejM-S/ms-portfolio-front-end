@@ -6,6 +6,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import React, { useEffect, useState } from "react";
 import PageTransition from "../components/PageTransition";
 import LoadingAnimation from "../components/LoadingAnimation";
+import { Helmet } from "react-helmet-async";
 
 const paragraphClass = "text-lg lg:text-center md:text-sm s:text-xs";
 
@@ -26,6 +27,14 @@ function Home() {
   }, [width]);
   return (
     <>
+       <Helmet>
+        <title>Portfolio</title>
+        <meta
+          name="description"
+          content="home page of a web developer portfolio"
+        />
+        <link rel="canonical" href="/" />
+      </Helmet>
       {" "}
       {!pageLoaded && <LoadingAnimation />}
       <PageTransition>

@@ -6,6 +6,7 @@ import EmailMe from "../components/EmailMe";
 import PageTransition from "../components/PageTransition";
 import LoadingAnimation from "../components/LoadingAnimation";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -30,6 +31,14 @@ function Contact() {
 
   return (
     <>
+     <Helmet>
+        <title>Contact</title>
+        <meta
+          name="contact"
+          content="contact informatio mail-form"
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       {!pageLoaded && <LoadingAnimation />}
       <PageTransition>
         <Layout className="xs:!px-0">
