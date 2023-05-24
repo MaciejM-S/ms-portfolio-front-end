@@ -33,13 +33,13 @@ function Skills() {
   const mainRef = useRef<HTMLDivElement>(null);
   const userContext = React.useContext(UserContext);
   const [animate, setAnimate] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(window.innerWidth);
 
-  useEffect(()=>{
-    window.addEventListener('resize',  ()=>{
-      setWidth(window.innerWidth)
-    })
-  },[width])
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth);
+    });
+  }, [width]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -82,9 +82,9 @@ function Skills() {
                 backgroundColor: "black",
                 color: "#f5f5f5",
                 border: "1px solid black",
-                padding: width<450?"3px 8px":"3px 8px",
+                padding: width < 450 ? "3px 8px" : "3px 8px",
                 borderRadius: "10px",
-                width: width<450? "80px":'130px',
+                width: width < 450 ? "80px" : "130px",
                 fontWeight: 600,
                 ...animatedProps,
               }
@@ -95,9 +95,9 @@ function Skills() {
                 backgroundColor: "#f5f5f5",
                 color: "black",
                 border: "1px solid #f5f5f5",
-                padding: width<450?"3px 8px":"3px 8px",
+                padding: width < 450 ? "3px 8px" : "3px 8px",
                 borderRadius: "10px",
-                width: width<450? "80px":'130px',
+                width: width < 450 ? "80px" : "130px",
                 fontWeight: 600,
                 ...animatedProps,
               }
@@ -111,17 +111,23 @@ function Skills() {
   return (
     <>
       <div ref={mainRef}>
-        <h2 className="font-bold text-7xl mt-40 w-full text-center md:text-6xl sm:text-5xl xs:text-4xl">Skills</h2>
+        <h2 className="font-bold text-7xl mt-40 w-full text-center md:text-6xl sm:text-5xl xs:text-4xl">
+          Skills
+        </h2>
         <div className="w-3/5 mx-auto h-[60vh] relative flex items-center justify-cneter rounded-full bg-gradientLight mt-10 dark:bg-gradientDark md:w-full ">
           {/* <img
             src={planet}
             className="absolute left-[50%] -translate-x-[50%] bottom-0 w-1/3 h-auto z-10"
           /> */}
 
-          <div className={`absolute left-[10%] top-[5%] -translate-x-[50%] ${branchClass}`}>
+          <div
+            className={`absolute left-[10%] top-[5%] -translate-x-[50%] ${branchClass}`}
+          >
             BACK END
           </div>
-          <div className={`absolute left-[90%] top-[5%] -translate-x-[50%] ${branchClass} `}>
+          <div
+            className={`absolute left-[90%] top-[5%] -translate-x-[50%] ${branchClass} `}
+          >
             OTHER
           </div>
           <div
@@ -133,6 +139,7 @@ function Skills() {
             <div>
               {frontendSkills.map((skill, index) => (
                 <AnimatedFeature
+                  key={index}
                   y={index * 6 + 12}
                   x={50}
                   name={skill}
@@ -142,6 +149,7 @@ function Skills() {
 
               {backendSkills.map((skill, index) => (
                 <AnimatedFeature
+                  key={index}
                   y={index * 6 + 12}
                   x={10}
                   name={skill}
@@ -150,6 +158,7 @@ function Skills() {
               ))}
               {otherSkills.map((skill, index) => (
                 <AnimatedFeature
+                  key={index}
                   y={index * 6 + 12}
                   x={90}
                   name={skill}

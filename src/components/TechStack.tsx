@@ -17,8 +17,8 @@ function TechStack(props: TechStackProps) {
       <div className="flex items-center  justify-start mb-4 xs:flex xs:flex-col xs:text-center">
         <div className="w-[130px] md:w-[110px] md:mr-2">front-end:</div>
         <ul className="flex flex-wrap w-full xs:justify-center">
-          {props.frontEnd.map((tech) => (
-            <li className={liClassName}>{tech}</li>
+          {props.frontEnd.map((tech, index) => (
+            <li key={index} className={liClassName}>{tech}</li>
           ))}
         </ul>
       </div>
@@ -26,8 +26,8 @@ function TechStack(props: TechStackProps) {
       <div className="flex items-center justify-star xs:flex xs:flex-col xs:text-center">
         <div className="w-[130px] md:w-[110px] md:mr-2">back-end:</div>
         <ul className="flex flex-wrap w-full xs:justify-center">
-          {props.backEnd.map((tech) => (
-            <li className={liClassName}>{tech}</li>
+          {props.backEnd.map((tech, index) => (
+            <li key={index} className={liClassName}>{tech}</li>
           ))}
         </ul>
       </div>

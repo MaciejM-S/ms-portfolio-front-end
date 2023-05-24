@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import React from "react";
 import PageTransition from "../components/PageTransition";
 import LoadingAnimation from "../components/LoadingAnimation";
+import { ThemeContext } from "@emotion/react";
 
 const Project = ({
   type,
@@ -31,7 +32,7 @@ const Project = ({
   title: string;
   summary: string;
   link: string;
-  githubLink: string;
+  githubLink: { public: boolean; frontEnd?: string; backEnd?: string };
   imgDesktop: any;
   dummyLogin?: string;
   dummyPassword?: string;
@@ -71,11 +72,21 @@ const Project = ({
           </p>
           <div>
             <div className="my-8 xs:flex xs:flex-wrap">
-              {githubLink && (
-                <Link to={githubLink}>
-                  <GitHubIcon sx={{ width: 40 }} />
-                </Link>
+              {githubLink.public && (
+                <div className="w-full my-4">
+                  {githubLink.frontEnd && (
+                    <Link to={githubLink.frontEnd || ""}>
+                      <GitHubIcon sx={{ width: 40 }} /> Frontend Repository
+                    </Link>
+                  )}
+                  {githubLink.backEnd && (
+                    <Link to={githubLink.frontEnd || ""}>
+                      <GitHubIcon sx={{ width: 40, color:'black' }} /> Backend Repository
+                    </Link>
+                  )}
+                </div>
               )}
+
               <Link
                 to={link}
                 className="ml-2 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:text-dark dark:bg-light dark:border-light xs:px-4 xs:text-base xs:mt-4"
@@ -126,7 +137,6 @@ function Projects() {
     };
   }, [width]);
 
-  
   return (
     <>
       <Helmet>
@@ -136,11 +146,14 @@ function Projects() {
       </Helmet>
       {!pageLoaded && <LoadingAnimation />}
       <PageTransition>
-        <main className="w-full mb-16 flex flex-col items-center justify-center" style={
+        <main
+          className="w-full mb-16 flex flex-col items-center justify-center"
+          style={
             pageLoaded
               ? { height: "auto" }
               : { overflow: "hidden", height: "100vh" }
-          } >
+          }
+        >
           <Layout className="xs:!p-1">
             <div className="mb-24 xs:mb-0">
               <AnimatedText
@@ -176,7 +189,7 @@ function Projects() {
                   }}
                   link="http://linkToMyExp"
                   type="featured project"
-                  githubLink=""
+                  githubLink={{ public: false }}
                   imgDesktop={aMockups}
                   frontEnd={["react (TS)", "Redux", "MUI", "react-spring"]}
                   backEnd={["node", "express", "REST API"]}
@@ -203,7 +216,11 @@ function Projects() {
                   }}
                   link="http://linkToMyExp"
                   type="featured project"
-                  githubLink="ggg"
+                  githubLink={{
+                    public: true,
+                    frontEnd: "dadsd",
+                    backEnd: "adfa",
+                  }}
                   imgDesktop={mrMockups}
                   frontEnd={["react (TS)", "Redux", "MUI"]}
                   backEnd={[
@@ -223,7 +240,11 @@ function Projects() {
                   summary="FullStack networking web application. Allows users to create a profile, share and interact with content, connect with friends and family throught adding posts, pictures and commenting them."
                   link="https://your-exp.onrender.com/"
                   type="featured project"
-                  githubLink="ggg"
+                  githubLink={{
+                    public: true,
+                    frontEnd: "dfdf",
+                    backEnd: "dfdf",
+                  }}
                   imgDesktop={yeMockups}
                   frontEnd={["react", "MUI"]}
                   backEnd={[
