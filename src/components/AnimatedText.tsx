@@ -24,11 +24,15 @@ function AnimatedText({
     const items = React.Children.toArray(children);
     const trail = useTrail(text.split(" ").length, {
       config: { mass: 10, tension: 2000, friction: 200 },
-      
-      opacity: showText ? 1 : 0,
+
+      // opacity: showText ? 1 : 0,
       y: showText ? 0 : 20,
       height: showText ? 70 : 0,
-      from: { opacity: 0, y: 40, height: 0 },
+      from: {
+        // opacity: 0,
+        y: 40,
+        height: 0,
+      },
     });
     return (
       <div style={centerClass || { display: "flex" }}>

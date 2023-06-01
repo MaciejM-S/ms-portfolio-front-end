@@ -26,10 +26,19 @@ function App() {
       .catch((e) => console.log(e));
 
     setTimeout(() => {
-      fetch("http://localhost:3001/startServer");
-      fetch("https://marine-rental-api.onrender.com/startServer");
-      fetch("https://your-exp-api.onrender.com/startServer");
-    }, 400000);
+      fetch("http://localhost:3001/startServer")
+        .then((res: any) => res.json())
+        .then((res: any) => console.log(res))
+        .catch((e) => console.log(e));
+      fetch("https://marine-rental-api.onrender.com/startServer")
+        .then((res: any) => res.json())
+        .then((res: any) => console.log(res))
+        .catch((e) => console.log(e));
+      fetch("https://your-exp-api.onrender.com/startServer")
+        .then((res: any) => res.json())
+        .then((res: any) => console.log(res))
+        .catch((e) => console.log(e));
+    }, 300000);
   }, []);
 
   return (

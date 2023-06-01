@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import planet from "../pub/planet.png";
 import { useSpring, animated, useInView } from "@react-spring/web";
-import { BlackHoleSVG } from "../pub/vectors";
 import { UserContext } from "../contexts/userContext";
 const branchClass =
   "w-[130px] absolute bg-light text-dark font-semibold border-dark border-2 border-solid rounded-lg p-1 dark:bg-dark dark:text-light dark:border-light text-center sm:w-[85px] sm:text-xs sm:px-2 sm:h-[45px] sm:flex sm:align-center sm:justify-center sm:flex-col";

@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import Layout from "../components/Layout";
 import AnimatedText from "../components/AnimatedText";
 import { Link } from "react-router-dom";
-import GitHubIcon from "@mui/icons-material/GitHub";
 
 import mrMockups from "../pub/mr-mockups.png";
 import aMockups from "../pub/a-mockups.png";
@@ -13,10 +12,10 @@ import { useEffect } from "react";
 import React from "react";
 import PageTransition from "../components/PageTransition";
 import LoadingAnimation from "../components/LoadingAnimation";
-import { ThemeContext } from "@emotion/react";
+import Repositories from "../components/Repositories";
+// import CodeOffIcon from "@mui/icons-material/CodeOff";
 
 const Project = ({
-  type,
   title,
   summary,
   link,
@@ -27,6 +26,7 @@ const Project = ({
   frontEnd,
   backEnd,
   dummyData,
+  imageCN
 }: {
   type?: string;
   title: string;
@@ -39,15 +39,16 @@ const Project = ({
   frontEnd: string[];
   backEnd: string[];
   dummyData?: { remark: any; login: string; password: string };
+  imageCN:string
 }) => {
   return (
-    <article className="w-full items-center justify-between border border-solid border-dark bg-light shadow-2xl py-10 relative rounded-3xl dark:bg-dark dark:border-light xl:my-16">
+    <article className="w-full items-center justify-between border border-solid border-dark bg-light shadow-2xl py-16 relative rounded-3xl dark:bg-dark dark:border-light xl:my-16">
       <div className="absolute top-0 left-0 -z-10 w-[101%] h-[102%]  rounded-[2rem] bg-dark dark:bg-light md:h-[101.25%] " />
       <div className="flex overflow-hidden xl:flex-col xl:items-center">
         <h2 className="hidden my-2 w-full text-left text-4xl font-bold mb-8  xl:block xl:text-center xs:text-3xl">
           {title}
         </h2>
-        <div className="w-2/3 xl:w-full xs:w-[115%]">
+        <div className="w-2/3 xl:w-full xs:w-[100%]">
           <Link
             to={link}
             target="_blank"
@@ -56,7 +57,7 @@ const Project = ({
             <img
               src={imgDesktop}
               alt={title}
-              className="w-full h-auto dark:opacity-80 xl:-translate-x-[5%]"
+              className={`w-full h-auto dark:opacity-80 ${imageCN}`}
             />
           </Link>
           <TechStack frontEnd={frontEnd} backEnd={backEnd} />
@@ -71,28 +72,17 @@ const Project = ({
             {summary}
           </p>
           <div>
-            <div className="my-8 xs:flex xs:flex-wrap">
-              {githubLink.public && (
-                <div className="w-full my-4">
-                  {githubLink.frontEnd && (
-                    <Link to={githubLink.frontEnd || ""}>
-                      <GitHubIcon sx={{ width: 40 }} /> Frontend Repository
-                    </Link>
-                  )}
-                  {githubLink.backEnd && (
-                    <Link to={githubLink.frontEnd || ""}>
-                      <GitHubIcon sx={{ width: 40, color:'black' }} /> Backend Repository
-                    </Link>
-                  )}
-                </div>
-              )}
-
+            <div className="my-8 flex items-center xs:flex xs:flex-wrap 2xl:flex-col 2xl:items-start 2xl:my-4 xl:flex-row xl:items-center md:flex-col md:justify-center md:items-start md:my-2">
               <Link
                 to={link}
-                className="ml-2 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:text-dark dark:bg-light dark:border-light xs:px-4 xs:text-base xs:mt-4"
+                className={`ml-2 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:text-dark dark:bg-light dark:border-light xs:px-4 xs:text-base xs:mt-4 ${
+                  githubLink.public ? "" : "mb-6"
+                }`}
+                target="_blank"
               >
                 Visit the Project
               </Link>
+              {githubLink.public && <Repositories githubLink={githubLink} />}
             </div>
 
             <div className="text-justify xs:text-sm">{dummyData?.remark}</div>
@@ -193,6 +183,7 @@ function Projects() {
                   imgDesktop={aMockups}
                   frontEnd={["react (TS)", "Redux", "MUI", "react-spring"]}
                   backEnd={["node", "express", "REST API"]}
+                  imageCN=' -translate-x-[5%]'
                 />
               </div>
               <div className="col-span-12">
@@ -219,7 +210,7 @@ function Projects() {
                   githubLink={{
                     public: true,
                     frontEnd: "dadsd",
-                    backEnd: "adfa",
+                    backEnd: "https://github.com/MaciejM-S/marine-rental-api",
                   }}
                   imgDesktop={mrMockups}
                   frontEnd={["react (TS)", "Redux", "MUI"]}
@@ -232,18 +223,19 @@ function Projects() {
                     "JWT",
                     "bcrypt",
                   ]}
+                  imageCN=''
                 />
               </div>
               <div className="col-span-12">
                 <Project
                   title="yourExp"
-                  summary="FullStack networking web application. Allows users to create a profile, share and interact with content, connect with friends and family throught adding posts, pictures and commenting them."
+                  summary="This FullStack networking web application enables users to create profiles, share and interact with content, connect with friends and family by adding posts, pictures, and commenting on them. Users have the ability to manage their profile details, search for other users using the search engine, and restrict the visibility of their posts to friends. Additionally, the application allows users to easily add and remove friends, enhancing the social networking experience."
                   link="https://your-exp.onrender.com/"
                   type="featured project"
                   githubLink={{
                     public: true,
-                    frontEnd: "dfdf",
-                    backEnd: "dfdf",
+                    frontEnd: "https://github.com/MaciejM-S/your-exp-front-end",
+                    backEnd: "https://github.com/MaciejM-S/your-exp-back-end",
                   }}
                   imgDesktop={yeMockups}
                   frontEnd={["react", "MUI"]}
@@ -252,11 +244,11 @@ function Projects() {
                     "express",
                     "mongoDB",
                     "REST API",
-                    "graphQL",
                     "JWT",
                     "bcrypt",
                     "SendGrid",
                   ]}
+                  imageCN=''
                   dummyData={{
                     remark: (
                       <>
@@ -271,6 +263,7 @@ function Projects() {
                     ),
                     login: "dummyuser@wp.pl",
                     password: "smith1234",
+                    
                   }}
                 />
               </div>

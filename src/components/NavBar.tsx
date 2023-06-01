@@ -3,13 +3,11 @@ import Logo from "./Logo";
 import { useEffect, useState } from "react";
 import Links from "./Links";
 import useModeSwitcher from "./customHooks/useModeSwitcher";
-import { Button, FormControlLabel } from "@mui/material";
+import { FormControlLabel } from "@mui/material";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { UserContext } from "../contexts/userContext";
 import React from "react";
-import { url } from "inspector";
 import AnimatedNavigation from "./AnimatedNavigation";
-import PageTransition from "./PageTransition";
 
 const rowClassName =
   "bg-dark block h-0.5 w-7 rounded-sm dark:bg-light transition-all duration-400 ";
@@ -102,7 +100,7 @@ function NavBar() {
         <div className="absolute left-[50%] top-2 translate-x-[-50%] md:scale-75">
           <Logo theme={theme} />
         </div>
-        <div className="hidden lg:inline-block" >
+        <div className="hidden lg:inline-block">
           <Links />
         </div>
         {/* desktop navigation */}

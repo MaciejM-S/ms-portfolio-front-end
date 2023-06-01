@@ -67,14 +67,12 @@ function EmailMe() {
     })
       .then((res) => res.json())
       .then((res) => {
-        setTimeout(() => {
           setLoading(false);
           if (res.message === "email sent") {
             setBackwardInfo("Email has been sent");
           } else {
             setBackwardInfo("Due to a server error the email was not sent");
           }
-        }, 1000);
       });
   };
 
