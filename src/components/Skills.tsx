@@ -13,20 +13,19 @@ type AFprops = {
   backend?: boolean;
 };
 
-const backendSkills = ["node.js", "Express", "mongoDB", "MySQL", "graphQL"];
+const backendSkills = ["Node.js", "Express.js", "MongoDB", "MySQL", "REST API", "GraphQL"];
 const frontendSkills = [
   "HTML",
-  "CSS",
-  "SCSS",
+  "CSS/SCSS",
   "JavaScript",
   "TypeScript",
   "React.js",
   "Redux",
   "MUI",
-  "Tailwind",
+  "Tailwind CSS",
   "RWD",
 ];
-const otherSkills = ["GIT", "restAPI", "Figma", "Jest"];
+const otherSkills = ["Git", "Figma", "JEST", "npm"];
 
 function Skills() {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -81,10 +80,10 @@ function Skills() {
                 backgroundColor: "black",
                 color: "#f5f5f5",
                 border: "1px solid black",
-                padding: width < 450 ? "3px 8px" : "3px 8px",
+                padding: width < 450 ? "3px 1px" : "3px 8px",
                 borderRadius: "10px",
-                width: width < 450 ? "80px" : "130px",
-                fontWeight: 600,
+                width: width < 450 ? "85px" : "130px",
+                fontWeight:width < 450 ? 500 : 600,
                 ...animatedProps,
               }
             : {
@@ -94,10 +93,10 @@ function Skills() {
                 backgroundColor: "#f5f5f5",
                 color: "black",
                 border: "1px solid #f5f5f5",
-                padding: width < 450 ? "3px 8px" : "3px 8px",
+                padding: width < 450 ? "3px 0px" : "3px 8px",
                 borderRadius: "10px",
-                width: width < 450 ? "80px" : "130px",
-                fontWeight: 600,
+                width: width < 450 ? "85px" : "130px",
+                fontWeight:width < 450 ? 500 : 600,
                 ...animatedProps,
               }
         }
@@ -113,7 +112,7 @@ function Skills() {
         <h2 className="font-bold text-7xl mt-40 w-full text-center md:text-6xl sm:text-5xl xs:text-4xl">
           Skills
         </h2>
-        <div className="w-3/5 mx-auto h-[60vh] relative flex items-center justify-cneter rounded-full bg-gradientLight mt-10 dark:bg-gradientDark md:w-full ">
+        <div className="w-3/5 mx-auto h-[60vh] relative flex items-center justify-cneter rounded-full bg-gradientLight mt-10 dark:bg-gradientDark md:w-full lg:min-h-[400px]">
           {/* <img
             src={planet}
             className="absolute left-[50%] -translate-x-[50%] bottom-0 w-1/3 h-auto z-10"
@@ -127,7 +126,7 @@ function Skills() {
           <div
             className={`absolute left-[90%] top-[5%] -translate-x-[50%] ${branchClass} `}
           >
-            OTHER
+            OTHERS
           </div>
           <div
             className={` absolute left-[50%] top-[5%] -translate-x-[50%] ${branchClass}`}

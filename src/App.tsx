@@ -25,8 +25,11 @@ function App() {
       .then((res: any) => console.log(res))
       .catch((e) => console.log(e));
 
-    setTimeout(() => {
-      fetch("http://localhost:3001/startServer")
+   const serverReseting = setInterval(() => {
+      
+    console.log('interval is working');
+    
+    fetch("http://localhost:3001/startServer")
         .then((res: any) => res.json())
         .then((res: any) => console.log(res))
         .catch((e) => console.log(e));
@@ -39,6 +42,11 @@ function App() {
         .then((res: any) => console.log(res))
         .catch((e) => console.log(e));
     }, 300000);
+
+ return(()=>{
+  clearInterval(serverReseting)
+ })
+
   }, []);
 
   return (

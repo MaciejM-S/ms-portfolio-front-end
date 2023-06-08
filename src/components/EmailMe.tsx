@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoadingButton from "./LoadingButton";
-
+import { UserContext } from "../contexts/userContext";
+import React from "react";
 
 const labelClass = "text-xl";
 const inputClass =
   "text-base block bg-light border-2 border-solid border-black rounded-md p-2 dark:bg-dark dark:border-light";
-
 
 const ButtonLoading = () => {
   return (
@@ -21,9 +21,9 @@ const ButtonLoading = () => {
 };
 
 function EmailMe() {
+  const { message, setMessage } = React.useContext(UserContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -37,7 +37,7 @@ function EmailMe() {
   const handleClick = async () => {
     let emailErr = false;
     let messageErr = false;
-    setBackwardInfo('')
+    setBackwardInfo("");
     if (!isValidEmail(email)) {
       setEmailError("please input correct email");
       emailErr = true;
@@ -67,14 +67,19 @@ function EmailMe() {
     })
       .then((res) => res.json())
       .then((res) => {
-          setLoading(false);
-          if (res.message === "email sent") {
-            setBackwardInfo("Email has been sent");
-          } else {
-            setBackwardInfo("Due to a server error the email was not sent");
-          }
+        setLoading(false);
+        if (res.message === "email sent") {
+          setBackwardInfo("Email has been sent");
+        } else {
+          setBackwardInfo("Due to a server error the email was not sent");
+        }
       });
   };
+
+  useEffect(()=>{
+    return(setMessage(''))
+  }, [])
+
 
   return (
     <div className="">

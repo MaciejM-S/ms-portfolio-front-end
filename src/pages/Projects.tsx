@@ -63,7 +63,7 @@ const Project = ({
           <TechStack frontEnd={frontEnd} backEnd={backEnd} />
         </div>
         <div className="w-1/2 flex flex-col items-start justify-center pr-12 xl:w-2/3 lg:w-3/4 xl:pr-0">
-          <Link to={link} className="hover:underline underline-offset-2">
+          <Link to={link} className="hover:underline underline-offset-2"  target="_blank">
             <h2 className="my-2 w-full text-left text-4xl font-bold mb-8 xl:hidden">
               {title}
             </h2>
@@ -177,12 +177,12 @@ function Projects() {
                     login: "",
                     password: "",
                   }}
-                  link="http://linkToMyExp"
+                  link="https://avion.onrender.com/"
                   type="featured project"
                   githubLink={{ public: false }}
                   imgDesktop={aMockups}
-                  frontEnd={["react (TS)", "Redux", "MUI", "react-spring"]}
-                  backEnd={["node", "express", "REST API"]}
+                  frontEnd={["React (TS)", "Redux", "MUI", "React-Spring"]}
+                  backEnd={["Node", "Express", "REST API"]}
                   imageCN=' -translate-x-[5%]'
                 />
               </div>
@@ -205,23 +205,23 @@ function Projects() {
                     login: "dummy@dummy.pl",
                     password: "123456!",
                   }}
-                  link="http://linkToMyExp"
+                  link="https://marine-rental.onrender.com"
                   type="featured project"
                   githubLink={{
                     public: true,
-                    frontEnd: "dadsd",
+                    frontEnd: "https://github.com/MaciejM-S/marine-rental-front-end",
                     backEnd: "https://github.com/MaciejM-S/marine-rental-api",
                   }}
                   imgDesktop={mrMockups}
-                  frontEnd={["react (TS)", "Redux", "MUI"]}
+                  frontEnd={["React (TS)", "Redux", "MUI"]}
                   backEnd={[
-                    "node",
-                    "express",
-                    "mongoDB",
+                    "Node",
+                    "Express",
+                    "MongoDB",
                     "REST API",
-                    "graphQL",
+                    "GraphQL",
                     "JWT",
-                    "bcrypt",
+                    "Bcrypt",
                   ]}
                   imageCN=''
                 />
@@ -238,14 +238,14 @@ function Projects() {
                     backEnd: "https://github.com/MaciejM-S/your-exp-back-end",
                   }}
                   imgDesktop={yeMockups}
-                  frontEnd={["react", "MUI"]}
+                  frontEnd={["React", "MUI"]}
                   backEnd={[
-                    "node",
-                    "express",
-                    "mongoDB",
+                    "Node",
+                    "Express",
+                    "MongoDB",
                     "REST API",
                     "JWT",
-                    "bcrypt",
+                    "Bcrypt",
                     "SendGrid",
                   ]}
                   imageCN=''

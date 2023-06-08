@@ -54,7 +54,7 @@ function AnimatedText({
   return (
     <>
       <div className="w-full mx-auto py-2 flex items-center justify-center text-center sm:-py-0">
-        <div className={`flex w-full text-dark font-bold`}>
+        <div className={`flex w-[90%] lg:w-full text-dark font-bold`}>
           <Trail open={showText}>
             {text.split(" ").map((word: string, index: number) => (
               <span key={word + "-" + index} className={className}>

@@ -7,10 +7,10 @@ import { UserContext } from "../contexts/userContext";
 const detailClassName = "flex text-lg xs:text-base";
 
 function ContactDetails() {
-  const userContext = React.useContext(UserContext);
+  const user = React.useContext(UserContext);
   const iconStyle = {
     mr: 2,
-    color: userContext.theme === "light" ? "#B63E96" : "#58E6D9",
+    color: user.theme === "light" ? "#B63E96" : "#58E6D9",
   };
   return (
     <>

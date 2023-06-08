@@ -7,13 +7,16 @@ import React, { useEffect, useState } from "react";
 import PageTransition from "../components/PageTransition";
 import LoadingAnimation from "../components/LoadingAnimation";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import EmailIcon from "@mui/icons-material/Email";
+import { UserContext } from "../contexts/userContext";
 
 const paragraphClass = "text-lg lg:text-center md:text-sm s:text-xs";
 
 function Home() {
   const [width, setWidth] = useState(window.innerWidth);
-
   const [pageLoaded, setPageLoaded] = React.useState(false);
+  const { rerender } = React.useContext(UserContext);
   useEffect(() => {
     setTimeout(() => {
       setPageLoaded(true);
@@ -25,17 +28,18 @@ function Home() {
       setWidth(window.innerWidth);
     });
   }, [width]);
+
+  useEffect(() => {}, [rerender]);
   return (
     <>
-       <Helmet>
+      <Helmet>
         <title>Portfolio</title>
         <meta
           name="description"
           content="home page of a web developer portfolio"
         />
         <link rel="canonical" href="/" />
-      </Helmet>
-      {" "}
+      </Helmet>{" "}
       {!pageLoaded && <LoadingAnimation />}
       <PageTransition>
         <main
@@ -81,24 +85,16 @@ function Home() {
                 </p>
 
                 <div className="flex items-center mt-4 lg:ml-auto lg:mr-auto">
-                  <a
-                    href="/dummy.pdf"
-                    target={"_blank"}
+                  <Link
+                    to="mailto:siuda.maciej@wp.pl"
                     className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:text-dark dark:bg-light border-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light
-                  md:p-2 md:px-4 md:text-base 
-             
-                  "
-                    download={true}
+                    md:p-2 md:px-4 md:text-base 
+               
+                    "
                   >
-                    Resume <DownloadIcon sx={{ ml: 0.5 }} />{" "}
-                  </a>
-                  <a
-                    href="/dummy.pdf"
-                    target={"_blank"}
-                    className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
-                  >
-                    Contact
-                  </a>
+                    Send Email
+                    <EmailIcon sx={{ ml: 1 }} />
+                  </Link>
                 </div>
               </div>
             </div>

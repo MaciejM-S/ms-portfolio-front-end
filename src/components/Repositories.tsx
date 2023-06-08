@@ -52,12 +52,14 @@ const Repositories = (props: RepositoriesProps) => {
             <Link
               className="animated-button show pl-4 py-1  sm:text-sm hover:underline"
               to={props.githubLink.frontEnd||''}
+              target={"_blank"}
             >
               Frontend Repository
             </Link>
             <Link
               className="animated-button show pl-4 py-1 sm:text-sm hover:underline"
               to={props.githubLink.backEnd||''}
+              target={"_blank"}
             >
               Backend Repository
             </Link>
