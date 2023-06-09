@@ -8,44 +8,22 @@ import MainBars from "./MainBars";
 import Contact from "./pages/Contact";
 import { useEffect } from "react";
 
+export const mainUrl = "https://ms-portfolio-api.onrender.com";
+
 function App() {
   useEffect(() => {
-    fetch("http://localhost:3001/startServer")
-      .then((res: any) => res.json())
-      .then((res: any) => console.log(res))
-      .catch((e) => console.log(e));
+    fetch(mainUrl + "/startServer")
+    fetch("https://marine-rental-api.onrender.com/startServer");
+    fetch("https://your-exp-api.onrender.com/startServer");
+    fetch("https://avion-api.onrender.com/startServer")
 
-    fetch("https://marine-rental-api.onrender.com/startServer")
-      .then((res: any) => res.json())
-      .then((res: any) => console.log(res))
-      .catch((e) => console.log(e));
-
-    fetch("https://your-exp-api.onrender.com/startServer")
-      .then((res: any) => res.json())
-      .then((res: any) => console.log(res))
-      .catch((e) => console.log(e));
-
-   const serverReseting = setInterval(() => {
-      
-    console.log('interval is working');
-    
-    fetch("http://localhost:3001/startServer")
-        .then((res: any) => res.json())
-        .then((res: any) => console.log(res))
-        .catch((e) => console.log(e));
-      fetch("https://marine-rental-api.onrender.com/startServer")
-        .then((res: any) => res.json())
-        .then((res: any) => console.log(res))
-        .catch((e) => console.log(e));
-      fetch("https://your-exp-api.onrender.com/startServer")
-        .then((res: any) => res.json())
-        .then((res: any) => console.log(res))
-        .catch((e) => console.log(e));
-    }, 300000);
-
- return(()=>{
-  clearInterval(serverReseting)
- })
+   setInterval(() => {
+      console.log("interval is working");
+      fetch(mainUrl + "/startServer")
+      fetch("https://marine-rental-api.onrender.com/startServer");
+      fetch("https://your-exp-api.onrender.com/startServer");
+      fetch("https://avion-api.onrender.com/startServer")
+    }, 200000);
 
   }, []);
 

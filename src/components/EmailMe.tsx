@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import LoadingButton from "./LoadingButton";
 import { UserContext } from "../contexts/userContext";
 import React from "react";
+import { mainUrl } from "../App";
+
 
 const labelClass = "text-xl";
 const inputClass =
@@ -52,7 +54,7 @@ function EmailMe() {
     }
     if (emailErr || messageErr) return;
     setLoading(true);
-    fetch("http://localhost:3001/sendEmail", {
+    fetch(mainUrl + "/sendEmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -150,7 +152,7 @@ function EmailMe() {
                 onClick={handleClick}
                 type="submit"
               >
-                Send an email
+                Send message
               </button>
             )}
           </div>

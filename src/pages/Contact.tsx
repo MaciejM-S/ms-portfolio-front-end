@@ -8,6 +8,7 @@ import LoadingAnimation from "../components/LoadingAnimation";
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
+
 function Contact() {
   const [width, setWidth] = useState(window.innerWidth);
 

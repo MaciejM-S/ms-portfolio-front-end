@@ -39,13 +39,13 @@ const Details = ({
             {time}
           </span>
           <span className="capitalize font-medium text-dark/75 dark:text-light/75 ">
-            {address?.map((address) => (
-              <span className="mr-2">{address}</span>
+            {address?.map((addres, index) => (
+              <span key={index} className="mr-2">{address}</span>
             ))}
           </span>
         </div>
-        {work.map((episode) => (
-          <span className="font-medium w-full block my-3 ">{episode}</span>
+        {work.map((episode, index) => (
+          <span key={index} className="font-medium w-full block my-3 ">{episode}</span>
         ))}
       </div>
     </li>
