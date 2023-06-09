@@ -13,19 +13,18 @@ export const mainUrl = "https://ms-portfolio-api.onrender.com";
 
 function App() {
   useEffect(() => {
-    fetch(mainUrl + "/startServer")
+    fetch(mainUrl + "/startServer");
     fetch("https://marine-rental-api.onrender.com/startServer");
     fetch("https://your-exp-api.onrender.com/startServer");
-    fetch("https://avion-api.onrender.com/startServer")
+    fetch("https://avion-api.onrender.com/startServer");
 
-   setInterval(() => {
+    setInterval(() => {
       console.log("interval is working");
-      fetch(mainUrl + "/startServer")
+      fetch(mainUrl + "/startServer");
       fetch("https://marine-rental-api.onrender.com/startServer");
       fetch("https://your-exp-api.onrender.com/startServer");
-      fetch("https://avion-api.onrender.com/startServer")
+      fetch("https://avion-api.onrender.com/startServer");
     }, 200000);
-
   }, []);
 
   return (
@@ -37,8 +36,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Reloader />} />
           </Route>
+          <Route path="*" element={<Reloader />} />
         </Routes>
       </Router>
     </div>
