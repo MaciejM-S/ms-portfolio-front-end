@@ -40,7 +40,7 @@ const Details = ({
           </span>
           <span className="capitalize font-medium text-dark/75 dark:text-light/75 ">
             {address?.map((addres, index) => (
-              <span key={index} className="mr-2">{address}</span>
+              <span key={index} className="mr-2">{addres}</span>
             ))}
           </span>
         </div>
@@ -81,7 +81,7 @@ function Experience(props: ExperienceProps) {
               position="officer"
               companyLink="www.google.com"
               company="@ Polish armed forces"
-              address={["|Poland", "|Afghanistan", "|Bosnia and Herzegovina"]}
+              address={["|Poland", "|Bosnia and Herzegovina", "|Afghanistan"]}
               time="2010-present"
               work={[
                 "Since 2020, a Staff Officer/Specialist in the Branch of Communications & Information Systems at the division level. Managing and coordinating IT systems to ensure effective communication beetwen Commanding Posts.",

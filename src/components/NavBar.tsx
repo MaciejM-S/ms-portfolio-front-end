@@ -67,7 +67,7 @@ function NavBar() {
     <>
       <header className="w-full px-40 py-8 font-medium  flex items-center  justify-between dark:text-light xl:px-24 lg:px-16 md:px-12 sm:px-8 ">
         <button
-          className="flex-col justify-center items-center hidden lg:flex pt-4"
+          className="flex-col justify-center items-center hidden lg:flex pt-4 -translate-y-2"
           onClick={handleBurger}
         >
           <span
