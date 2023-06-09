@@ -7,6 +7,7 @@ import Projects from "./pages/Projects";
 import MainBars from "./MainBars";
 import Contact from "./pages/Contact";
 import { useEffect } from "react";
+import Reloader from "./pages/Reloader";
 
 export const mainUrl = "https://ms-portfolio-api.onrender.com";
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Reloader />} />
           </Route>
         </Routes>
       </Router>
