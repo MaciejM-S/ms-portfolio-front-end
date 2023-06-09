@@ -18,7 +18,6 @@ function App() {
     fetch("https://avion-api.onrender.com/startServer");
 
     setInterval(() => {
-      console.log("interval is working");
       fetch(mainUrl + "/startServer");
       fetch("https://marine-rental-api.onrender.com/startServer");
       fetch("https://your-exp-api.onrender.com/startServer");

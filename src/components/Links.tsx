@@ -15,12 +15,12 @@ function Links() {
 
       <div className="flex" >
         <div  className={userContext.theme==='light'?`${linkContainerCN} ml-2 lg:text-light`:`${linkContainerCN} ml-2 text-dark`}>
-          <Link to="/" target={"_blank"}>
+          <Link to="https://www.linkedin.com/in/maciej-siuda-b80272273/" target={"_blank"}>
             <LinkedInIcon sx={iconStyle} />
           </Link>
         </div>
         <div className={userContext.theme==='light'?`${linkContainerCN} ml-2 lg:text-light`:`${linkContainerCN} ml-2 text-dark`} >
-          <Link to="/" target={"_blank"}>
+          <Link to="https://github.com/MaciejM-S" target={"_blank"}>
             <GitHubIcon sx={iconStyle} />
           </Link>
         </div>
