@@ -71,7 +71,7 @@ function Experience(props: ExperienceProps) {
               companyLink="https://aplinet.pl/"
               company="@ Aplinet."
               address={["|Remote - part time"]}
-              time="2023-present"
+              time="01.2023-present"
               work={[
                 `Building and implementing user interfaces using React.js, translating design mockups into functional web app, ensuring responsive and optimized layouts.`,
               ]}
@@ -83,7 +83,7 @@ function Experience(props: ExperienceProps) {
               address={["|Poland", "|Bosnia and Herzegovina", "|Afghanistan"]}
               time="2010-present"
               work={[
-                "Since 2020, a Staff Officer/Specialist in the Branch of Communications & Information Systems at the division level. Managing and coordinating IT systems to ensure effective communication beetwen Commanding Posts.",
+                "Since 2020, the Specialist in the Communications & Information Systems Branch at the division level has been managing IT systems for effective communication.",
 
                 "From 2021 to 2022, a Watchkeeper in the European Union Force in Bosnia and Herzegovina Headquarters, operating in an international environment and closely collaborating with soldiers from other nations.",
 
