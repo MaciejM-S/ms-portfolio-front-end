@@ -67,14 +67,13 @@ function Experience(props: ExperienceProps) {
           <div className="absolute left-8 top-0 w-[4px] h-full bg-dark dark:bg-light sm:left-[16px] sm:w-[2px]" />
           <ul className="w-full flex flex-col items-start justify-between ml-4">
             <Details
-              position="front-end developer"
+              position="junior front-end developer"
               companyLink="https://aplinet.pl/"
               company="@ Aplinet."
               address={["|Remote - part time"]}
-              time="2022-present"
+              time="2023-present"
               work={[
-                `Building and implementing user interfaces using React.js and Next.js frameworks, translating design mockups into functional web app, ensuring responsive and optimized layouts. 
-                `,
+                `Building and implementing user interfaces using React.js, translating design mockups into functional web app, ensuring responsive and optimized layouts.`,
               ]}
             />
             <Details
