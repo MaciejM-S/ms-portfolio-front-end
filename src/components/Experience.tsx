@@ -87,7 +87,7 @@ function Experience(props: ExperienceProps) {
 
                 "Between 2021 and 2022, served as a Watchkeeper in a multinational military body, demonstrating problem-solving skills in an international, diverse environment.",
                 
-                "For a decade, from 2010 to 2020, led specialized units in Communication and Information Systems, managing the life cycle of software development projects and improving system efficiency.",
+                "For a decade, from 2010 to 2020, served in leadership roles within specialized units in Communication and Information Systems, responsible for integrating CIS systems with subordinate and adjacent units, ensuring interoperability and enhanced efficiency.",
                 
                 "In 2012, acted as a technical advisor on a multinational team in an international security mission, dealing with complex software challenges in high-pressure situations."
               ]}
