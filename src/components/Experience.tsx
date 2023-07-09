@@ -69,7 +69,7 @@ function Experience(props: ExperienceProps) {
             <Details
               position="junior front-end developer"
               companyLink="https://aplinet.pl/"
-              company="@ Aplinet."
+              company="@ Aplinet"
               address={["|Remote - part time"]}
               time="01.2023-present"
               work={[
