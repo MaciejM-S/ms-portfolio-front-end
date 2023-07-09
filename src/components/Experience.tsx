@@ -83,13 +83,13 @@ function Experience(props: ExperienceProps) {
               address={["|Poland", "|Bosnia and Herzegovina", "|Afghanistan"]}
               time="2010-present"
               work={[
-                "Since 2020, the Specialist in the Communications & Information Systems Branch at the division level has been managing IT systems for effective communication.",
+                "Since 2020, overseen complex IT networks, enhancing systems architecture and ensuring efficient communication, in a large-scale Communications & Information Systems branch.",
 
-                "From 2021 to 2022, a Watchkeeper in the European Union Force in Bosnia and Herzegovina Headquarters, operating in an international environment and closely collaborating with soldiers from other nations.",
-
-                "Between 2010 and 2020, Leadership positions in units specializing in providing Communication and Information Systems. ",
-
-                "In 2012, Advisor in a Military Advisor Team deployed in an international environment as part of the International Security Assistance Force in Afghanistan. ",
+                "Between 2021 and 2022, served as a Watchkeeper in a multinational military body, demonstrating problem-solving skills in an international, diverse environment.",
+                
+                "For a decade, from 2010 to 2020, led specialized units in Communication and Information Systems, managing the life cycle of software development projects and improving system efficiency.",
+                
+                "In 2012, acted as a technical advisor on a multinational team in an international security mission, dealing with complex software challenges in high-pressure situations."
               ]}
             />
           </ul>
