@@ -85,11 +85,11 @@ function Experience(props: ExperienceProps) {
               work={[
                 "Since 2020, overseen complex IT networks, enhancing systems architecture and ensuring efficient communication, in a large-scale Communications & Information Systems branch.",
 
-                "Between 2021 and 2022, served as a Watchkeeper in a multinational military body, demonstrating problem-solving skills in an international, diverse environment.",
+                // "Between 2021 and 2022, served as a Watchkeeper in a multinational military body, demonstrating problem-solving skills in an international, diverse environment.",
                 
                 "For a decade, from 2010 to 2020, served in leadership roles within specialized units in Communication and Information Systems, responsible for integrating CIS systems with subordinate and adjacent units, ensuring interoperability and enhanced efficiency.",
                 
-                "In 2012, acted as a technical advisor on a multinational team in an international security mission, dealing with complex software challenges in high-pressure situations."
+                // "In 2012, acted as a technical advisor on a multinational team in an international security mission, dealing with complex software challenges in high-pressure situations."
               ]}
             />
           </ul>
