@@ -77,17 +77,15 @@ function Experience(props: ExperienceProps) {
               ]}
             />
             <Details
-              position="officer"
+              position="specialist"
               companyLink="www.google.com"
               company="@ Polish armed forces"
               address={["|Poland", "|Bosnia and Herzegovina", "|Afghanistan"]}
               time="2010-present"
               work={[
-                "Since 2020, overseen complex IT networks, enhancing systems architecture and ensuring efficient communication, in a large-scale Communications & Information Systems branch.",
+                "Overseen complex IT networks, enhancing systems architecture, and ensuring efficient communication, in a large-scale Communications & Information Systems branch. My responsibilities involved meticulous planning and maintenance, ensuring the proper exploitation of IT systems. Leveraging this extensive experience, I developed a comprehensive understanding of technology's core principles and architectural design, allowing me to swiftly identify and address potential challenges. As I look to transition into a civilian role as a web developer, I am eager to apply this technical foundation, coupled with my problem-solving abilities, to create user-centric, efficient, and aesthetically pleasing web interfaces.",
 
                 // "Between 2021 and 2022, served as a Watchkeeper in a multinational military body, demonstrating problem-solving skills in an international, diverse environment.",
-                
-                "For a decade, from 2010 to 2020, served in leadership roles within specialized units in Communication and Information Systems, responsible for integrating CIS systems with subordinate and adjacent units, ensuring interoperability and enhanced efficiency.",
                 
                 // "In 2012, acted as a technical advisor on a multinational team in an international security mission, dealing with complex software challenges in high-pressure situations."
               ]}
